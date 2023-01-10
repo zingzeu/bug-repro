@@ -1,7 +1,7 @@
 {
   "private": "true",
   "scripts": {
-    "build": "cd app && taro build --type weapp"
+    "build": "taro build --type weapp"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",

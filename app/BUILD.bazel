@@ -1,5 +1,8 @@
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
-load("@npm//:@tarojs/cli/package_json.bzl", taro_cli = "bin")
+load("@npm//app:@tarojs/cli/package_json.bzl", taro_cli = "bin")
+load("@npm//:defs.bzl", "npm_link_all_packages")
+
+npm_link_all_packages(name = "node_modules")
 
 SRCS = [
     "project.tt.json",
@@ -9,7 +12,7 @@ SRCS = [
     "//app/config",
 ]
 
-BUILD_DEPS = ["//:node_modules/" + d for d in [
+BUILD_DEPS = ["//app:node_modules/" + d for d in [
     "@babel/traverse",
     "@tarojs/mini-runner",
     "@tarojs/plugin-framework-react",
