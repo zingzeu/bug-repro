@@ -3,7 +3,7 @@ load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
 copy_to_bin(
     name = "src",
     srcs = glob([
-        "**/*"
+        "**/*",
     ]),
-    visibility = ["//js/apps/yngdieng/miniapp:__pkg__"],
+    visibility = ["//app:__pkg__"],
 )

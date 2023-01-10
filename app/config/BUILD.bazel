@@ -5,5 +5,5 @@ copy_to_bin(
     srcs = glob([
         "*.js",
     ]),
-    visibility = ["//js/apps/yngdieng/miniapp:__pkg__"],
+    visibility = ["//app:__pkg__"],
 )

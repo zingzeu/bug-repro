@@ -5,8 +5,8 @@ SRCS = [
     "project.tt.json",
     "project.config.json",
     "babel.config.js",
-    "//js/apps/yngdieng/miniapp/src",
-    "//js/apps/yngdieng/miniapp/config",
+    "//app/src",
+    "//app/config",
 ]
 
 BUILD_DEPS = ["//:node_modules/" + d for d in [
