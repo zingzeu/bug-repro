@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "yngdieng-miniapp",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}

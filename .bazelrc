@@ -1,0 +1,6 @@
+common --enable_bzlmod
+build --bes_results_url=https://app.buildbuddy.io/invocation/
+build --bes_backend=grpcs://remote.buildbuddy.io
+build --remote_header=x-buildbuddy-api-key=3OSCCTLFWH4JKPdAyVF1
+build --build_metadata=REPO_URL=https://github.com/zingzeu/infra-private.git
+build --noremote_upload_local_results

@@ -1,0 +1,53 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@npm//:@tarojs/cli/package_json.bzl", taro_cli = "bin")
+
+SRCS = [
+    "project.tt.json",
+    "project.config.json",
+    "babel.config.js",
+    "//js/apps/yngdieng/miniapp/src",
+    "//js/apps/yngdieng/miniapp/config",
+]
+
+BUILD_DEPS = ["//:node_modules/" + d for d in [
+    "@babel/traverse",
+    "@tarojs/mini-runner",
+    "@tarojs/plugin-framework-react",
+    "@tarojs/plugin-platform-weapp",
+    "@tarojs/react",
+    "@tarojs/router",
+    "@tarojs/runtime",
+    "@tarojs/shared",
+    "@tarojs/taro-loader",
+    "@tarojs/taro",
+    "@tarojs/webpack5-runner",
+    "babel-preset-taro",
+    "clsx",
+    "immer",
+    "lodash",
+    "react-redux",
+    "react",
+    "redux-logger",
+    "redux-thunk",
+    "redux",
+    "taro-ui",
+]]
+
+taro_cli.taro(
+    name = "miniapp",
+    srcs = SRCS + BUILD_DEPS,
+    args = [
+        "build",
+        "--type",
+        "weapp",
+    ],
+    chdir = package_name(),
+    out_dirs = ["dist"],
+)
+
+build_test(
+    name = "build_test",
+    targets = [
+        ":miniapp",
+    ],
+)
