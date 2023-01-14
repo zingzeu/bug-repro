@@ -15,9 +15,24 @@ npm.npm_translate_lock(
     name = "npm",
     pnpm_lock = "//:pnpm-lock.yaml",
     verify_node_modules_ignored = "//:.bazelignore",
+    # npmrc = "//:.npmrc",
     public_hoist_packages = {
         "@babel/traverse": [
-            "",
+            "app",
+        ],
+        "@tarojs/taro-loader": [
+            "app",
+        ],
+        "@tarojs/react": [
+            "app",
+        ],
+        "@tarojs/components": [
+            "app",
+        ],
+        "@tarojs/plugin-platform-weapp": [
+            "app",
+        ],
+        "@tarojs/taro": [
             "app",
         ],
     },
