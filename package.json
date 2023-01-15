@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "pnpm": {
+    "packageExtensions": {
+      "@tarojs/helper": {
+        "dependencies": {
+          "@babel/traverse": "*"
+        }
+      },
+      "webpack": {
+        "dependencies": {
+          "@tarojs/taro-loader": "*"
+        }
+      },
+      "loader-runner": {
+        "dependencies": {
+          "@tarojs/taro-loader": "*"
+        }
+      },
+      "react-redux": {
+        "dependencies": {
+          "@tarojs/react": "*"
+        }
+      },
+      "taro-ui": {
+        "dependencies": {
+          "@tarojs/plugin-platform-weapp": "*",
+          "@tarojs/taro": "*"
+        }
+      }
+    }
+  }
+}
